@@ -26,7 +26,7 @@ export class TNSFontIcon {
       }
       const cssFile = knownFolders.currentApp().getFile(path);
       return new Promise((resolve, reject) => {
-        cssFile.readText().then((data) => {
+        cssFile.readTextSync().then((data) => {
           const map = lib.mapCss(data, TNSFontIcon.debug);
           TNSFontIcon.css[currentName] = map;
           resolve();
